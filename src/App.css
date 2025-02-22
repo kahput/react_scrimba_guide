@@ -1,0 +1,70 @@
+html {
+  height: 100%;
+  max-height: 1280px;
+}
+body {
+  /* background: #21222A; */
+  margin: 100px auto;
+  padding: 0px;
+  max-width: 600px;
+  height: 100%;
+  max-height: 1280px;
+  background-color: #282D35;
+  color: #FFFFFF;
+}
+#root {
+  font-family: Inter, sans-serif;
+  background-color: #282D35;
+  border: 5px solid;
+  border-radius: 10px;
+  margin: auto;
+}
+
+header {
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav {
+  border-radius: 10px 10px 0px 0px;
+  padding: 2rem;
+  background: #21222A;
+  color: #00D8FF;
+  font-size: 22.5px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1%;
+}
+
+main {
+  padding: 55px 25px 120px 25px;
+  background-image: url("react.svg");
+background-size: 100% 75%; /* Width 75% of the element's width, and 100% of the element's height */
+  background-position: 300px; /* Align the image to the right edge of the element */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+main > h1 {
+  margin: 0px; 
+  padding: 0px;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Inter;
+  margin-bottom: 40px;
+}
+
+main > ul {
+  font-size: 16px;
+}
+
+main > ul > li {
+  padding-block: 10px;
+  line-height: 20px;
+}
+
+main > ul > li::marker {
+  color: #00D8FF;
+  font-size: 1.5rem;
+}
