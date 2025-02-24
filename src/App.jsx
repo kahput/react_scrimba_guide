@@ -1,13 +1,20 @@
-import './App.css'
-import Main from './components/main';
-import Navbar from './components/navbar';
+import Entry from "./components/Entry";
+import Header from './components/header';
+import Posts from "./data/data"
+
 
 function App() {
 
   return (
     <>
-      <Navbar />
-      <Main />
+      <Header />
+      <main className="container">
+        <div className="entry-grid">
+          {Posts.map(post => (
+            <Entry key={post.id} post={post} />
+          ))}
+        </div>
+      </main>
     </>
   );
 }
