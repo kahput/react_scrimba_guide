@@ -1,20 +1,12 @@
-import Entry from "./components/Entry";
-import Header from './components/header';
-import Posts from "./data/data"
-
+import Header from "./components/header";
+import Main from "./components/main"
 
 function App() {
 
   return (
     <>
       <Header />
-      <main className="container">
-        <div className="entry-grid">
-          {Posts.map(post => (
-            <Entry key={post.id} post={post} />
-          ))}
-        </div>
-      </main>
+      <Main />
     </>
   );
 }

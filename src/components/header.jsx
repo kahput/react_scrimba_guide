@@ -1,19 +1,8 @@
-import globe from "../assets/globe.png"
-
 function Header() {
   return (
-    <header className="header">
-      <nav className="nav">
-        <div className="logo">
-          <img className="globe" src={globe} alt="Globe icon" />
-          <span>Blog</span>
-        </div>
-        <div className="links">
-          <a>Some</a>
-          <a>Thing</a>
-          <a>About me</a>
-        </div>
-      </nav>
+    <header>
+      <img src="https://scrimba.com/op/assets/A28DgHLsd8tHE9ETjRJGWVJLcnf1FKbqGuAGmQjEquBpH6C2eoUyd8UUjgY4BRLC5jyG7ecDjmyM9iZpHU9gvUE94fjLnbuf6t6hdfe7DsTgBVGB8v1bBQccRLMrG3jV.png" alt="chef claude" />
+      <h1>Chef Gemini </h1>
     </header>
   )
 }
