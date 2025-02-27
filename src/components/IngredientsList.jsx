@@ -13,7 +13,7 @@ function IngredientsList(props) {
       </div>
 
       {props.ingredients.length >= 3 ? <div className="get-recipe-container">
-        <div>
+        <div ref={props.ref}>
           <h3>Ready for a recipe?</h3>
           <p>Generate a recipe from your list of ingredients.</p>
         </div>
@@ -27,6 +27,7 @@ function IngredientsList(props) {
 IngredientsList.propTypes = {
   ingredients: PropTypes.arrayOf(PropTypes.string),
   onClick: PropTypes.func,
+  ref: PropTypes.object
 };
 
 export default IngredientsList;

@@ -1,12 +1,23 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import IngredientsList from "./IngredientsList"
 import GeminiRecipe from "./GeminiRecipe";
 import { getRecipeFromGemini } from "../ai";
 
 
 function Main() {
-  const [ingredients, setIngredients] = useState([])
+  const [ingredients, setIngredients] = useState(["chicken", "rice", "eggs", "all the main spices"])
   const [recipe, setRecipe] = useState("");
+  let recipeSection = useRef(null);
+  console.log(recipeSection);
+
+  useEffect(() => {
+    if (recipeSection.current) {
+      recipeSection.current.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+  }, [recipe])
 
   function addIngredient(formData) {
     setIngredients((prevState) => {
@@ -32,7 +43,7 @@ function Main() {
         />
         <button>Add ingredient</button>
       </form >
-      {ingredients.length ? <IngredientsList ingredients={ingredients} onClick={getRecipe} /> : null}
+      {ingredients.length ? <IngredientsList ingredients={ingredients} onClick={getRecipe} ref={recipeSection} /> : null}
       {recipe ? <GeminiRecipe recipe={recipe} /> : undefined}
     </main>
   )
