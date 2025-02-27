@@ -1,134 +1,113 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  background-color: #FAFAF8;
-  color: #141413;
   font-family: Inter, sans-serif;
 }
 
-header {
-  background-color: #fff;
+html, body {
+  height: 100%;
+}
 
+#root {
   display: flex;
+  height: 100%;
+  padding: 0px 20px;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  height: 108px;
-  gap: 1rem;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  background: #0B2434;
 }
 
-header > img {
-  width: 50px;
-}
+.main-area {
+  background-color: #F5F5F5;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
 
-header > h1 {
-  font-weight: 400;
-  margin: 0px;
-}
-
-main {
-  padding: 70px 30px 10px;
-}
-
-.add-ingredient-form {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  height: 38px;
-
-}
-
-.add-ingredient-form > input {
-  border-radius: 6px;
-  border: 1px solid #D1D5DB;
-  padding: 9px 13px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-  flex-grow: 1;
-  min-width: 150px;
   max-width: 400px;
+  max-height: 600px;
 
-}
-
-.add-ingredient-form > button {
-  font-family: Inter, sans-serif;
-  border-radius: 6px;
-  border: none;
-  background-color: #141413;
-  color: #FAFAF8;
-  width: 150px;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.add-ingredient-form > button:before {
-  content: "+";
-  margin-right: 5px;
-}
-
-section > h2 {
-  text-align: center;
-  margin: 40px auto 0px;
-}
-
-.ingredient-list-box {
+  padding: 100px;
   display: flex;
-  max-width: 800px;
+  flex-direction: column;
+  gap: 50px;
+}
+
+
+.top-text > h1 {
+  color: #2B283A;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 29.93px;
+  letter-spacing: -3%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.top-text > p {
+  color: #2B283A;
+  font-family: Inter;
+  font-weight: 400;
+  max-width: 90%;
   margin: auto;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -3%;
+  text-align: center;
+
 }
 
-ul.ingredients-list {
-    margin-bottom: 48px;
+.dice {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  flex-grow: 1;
+  height: 40%;
+  gap: 10px; /* Space between buttons */
 }
 
-ul.ingredients-list > li {
-    color: #475467;
-    line-height: 28px;
+button {
+  cursor: pointer;
+  font-family: Inter, sans-serif;
 }
 
-.get-recipe-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 600px;
-    margin: auto;
-    border-radius: 8px;
-    background: #F0EFEB;
-    padding: 10px 28px;
+.die {
+  background-color: #fff;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+
+  color: #2B283A;
+  font-weight: 700;
+  font-size: 2rem;
+
 }
 
-.get-recipe-container h3 {
-    font-size: 1.125rem;
-    font-weight: 500;
-    line-height: 24px;
+button:active {
+  transform: scale(0.95);  /* Slightly shrink the button */
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);  /* Reduce the shadow */
 }
 
-.get-recipe-container p {
-    color: #6B7280;
-    font-size: 0.875rem;
-    line-height: 20px;
+.roll {
+  font-weight: 700;
+  font-size: 2rem;
+
+  background-color: blue;
+  color: white;
+  border: solid blue;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+
+  height: 12%;
+  width: 45%;
+  margin: auto;
+  line-height: 20px;
+  font-weight: 600;
+  text-align: center;
+
 }
 
-.get-recipe-container button {
-    border: none;
-    border-radius: 6px;
-    background: #D17557;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-    color: #FAFAF8;
-    padding: 9px 17px;
-    font-family: Inter, sans-serif;
-    font-size: 0.875rem;
-    cursor: pointer;
-}
-
-.suggested-recipe-container {
-    color: #475467;
-    line-height: 28px;
-    font-size: 1.125rem;
-    font-weight: 400;
-    max-width: 800px;
-    margin:auto;
-}
-
-.suggested-recipe-container ul li, .suggested-recipe-container ol li {
-    margin-bottom: 8px;
+/* Mobile-specific styles */
+@media (max-width: 678px) {
+  .main-area {
+    padding: 50px 30px; /* Adjust padding for smaller screens */
+  }
 }
