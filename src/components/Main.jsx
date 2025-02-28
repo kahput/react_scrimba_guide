@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Die from "./Die";
 import { nanoid } from "nanoid"
 import Confetti from "react-confetti"
 
 function Main() {
-    const [dice, setDice] = useState(rollDice(null));
+    const [dice, setDice] = useState(() => rollDice(null));
+
+
+    let newGameButton = useRef(null);
 
     const gameWon = dice.every(element => element.isHeld
         && dice.every(die => die.value === dice[0].value));
+
+    useEffect(() => {
+        newGameButton.current.focus();
+    }, [gameWon])
 
     function rollDice(prevState) {
         let arr = prevState !== null
@@ -41,6 +48,11 @@ function Main() {
 
     return (
         <main className="main-area">
+            {gameWon && <Confetti />}
+            <div aria-live="polite" className="sr-only">
+                {gameWon && <p>{"Congratulations! You won! Press \"New Game\" to start again"}</p>}
+
+            </div>
             <div className="top-text">
                 <h1>Tenzies</h1>
                 <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
@@ -48,10 +60,9 @@ function Main() {
             <div className="dice">
                 {diceElements}
             </div>
-            <button onClick={() => setDice((prevState) => !gameWon ? rollDice(prevState) : rollDice(null))} className="roll">
+            <button ref={newGameButton} onClick={() => setDice((prevState) => !gameWon ? rollDice(prevState) : rollDice(null))} className="roll">
                 {gameWon ? "New game" : "Roll"}
             </button>
-            {gameWon && <Confetti />}
         </main>
 
     )
