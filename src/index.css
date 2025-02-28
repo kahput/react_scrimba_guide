@@ -67,6 +67,7 @@ html, body {
 button {
   cursor: pointer;
   font-family: Inter, sans-serif;
+  color: #2B283A;
 }
 
 .die {
@@ -87,8 +88,6 @@ button:active {
 }
 
 .roll {
-  font-weight: 700;
-  font-size: 2rem;
 
   background-color: blue;
   color: white;
@@ -96,9 +95,12 @@ button:active {
   border-radius: 5px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 
-  height: 12%;
-  width: 45%;
   margin: auto;
+
+  white-space: nowrap;
+  font-size: 2rem;
+  width: auto;
+  padding: 20px 30px;
   line-height: 20px;
   font-weight: 600;
   text-align: center;
